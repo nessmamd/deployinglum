@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Customers Sponsorship Login Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=0, user-scalable=no"> 
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+
+    <label>Filename</label>
+    <input type="text" id="filename" value="hello.csv"/>
+    
+    <button type="button" id="download-btn">
+        Download something sdfsd
+    </button>
+
+  </body>
+</html>
+
+<script>
+  function download(filename, text) {
+    var element = document.createElement('a');
+    element.setAttribute('href', 'data:text/csv;charset=utf-8,' + encodeURIComponent(text));
+    element.setAttribute('download', filename);
+    
+    element.style.display = 'none';
+    document.body.appendChild(element);
+    
+    element.click();
+    
+    document.body.removeChild(element);
+  }
+  
+  // Start file download.....this should be in the contact a luminous employee button.....but the stuff that goes in here should be selected.... 
+  document.getElementById("download-btn").addEventListener("click", function(){
+
+    // Generate download of data.csv file with some content
+    var text = rows.map(row => row.join(",")).join("\n");
+    var filename = "usersponsors";
+    //var filename = document.getElementById("filename").value ;
+    
+    download(filename, text);
+  }, false);
+</script>

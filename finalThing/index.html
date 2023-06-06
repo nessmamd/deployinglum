@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html>
+  <!-- need to pass the username and wtv and keep it at the top -->
+    <!-- deployment : https://www.youtube.com/watch?v=uEVmD6n8Il0&ab_channel=Fireship -->
+  <head>
+    <title>Customers Sponsorship Login Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet">
+    <meta name = "viewport" content = "width=device-width, initial-scale = 0, user-scalable=no"> 
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src = "/movement/mov.js"></script>
+  </head>
+  <body>
+
+    <div class = "exit">
+      <a href = "home.html" class = "back">Back to Home</a> 
+    </div> 
+    <div class = "headerss">
+      <h1 id = "username"> </h1>
+    </div>
+    <!-- <pre id = "json-data"  style = "display:none"><%= JSON.stringify(jsonFile, null, 2) %></pre> -->
+    <div class = "questionOne">
+      <h1> What is the company/organizations name? </h1>
+      <input id = "question" type = "text" placeholder = "Enter Answer"> 
+      <button onclick = "returnText()" class = "next">Next</button>
+    </div>
+    <div class = "questionTwo" style = "display:none">
+      <h1> What province in Canada will you execute the project? (do not type abbreviations) </h1>
+      <input id = "questiontwo" type = "text" placeholder = "Enter Answer"> 
+      <button onclick = "returnTextTwo()" class = "next">Next</button>
+    </div>
+    <div class = "questionThree" style = "display:none">
+      <h1> What kind of archetype/facility is your location? </h1>
+      <input id = "questionthree" type = "text" placeholder = "Enter Answer"> 
+      <button onclick = "returnTextThree()" class = "next">Next</button>
+    </div>
+    <div class = "questionFour" style = "display:none">
+      <h1> List all of the materials that you will either be replacing or upgrading during your energy savings program. (seprate each with a comma) </h1>
+      <input id = "questionfour" type = "text" placeholder = "Enter Answer"> 
+      <button onclick = "returnTextFour()" class = "next">Next</button>
+    </div>
+    <div class = "questionFive" style = "display:none">
+      <h1> List all of the materials that you will either be replacing or upgrading during your energy savings program. (seprate each with a comma) </h1>
+      <input id = "questionfive" type = "text" placeholder = "Enter Answer"> 
+      <button onclick = "returnTextFive()" class = "next" >Next</button>
+    </div>
+    <div class = "questionSix" style = "display:none">
+      <h1> What kind of projects will you be working on? </h1>
+      <div class = "projects">
+        <input type="checkbox" name="question" value="energy management" onclick="updateRetro(this)"> Energy management <br>
+        <input type="checkbox" name="question" value="monitoring submetering" onclick="updateRetro(this)"> Monitoring submetering <br>
+        <input type="checkbox" name="question" value="training" onclick="updateRetro(this)"> Training employees <br>
+        <input type="checkbox" name="question" value="hiring" onclick="updateRetro(this)"> Hiring for an Energy management or other forms to reduce consumption <br>
+        <input type="checkbox" name="question" value="iso 50001 compliance" onclick="updateRetro(this)"> ISO 50001 Compliance <br>
+        <input type="checkbox" name="question" value="sensing and automation" onclick="updateRetro(this)"> Sensing and automation <br>
+        <input type="checkbox" name="question" value="retrofits" onclick="updateRetro(this)"> Retrofits <br>
+        <input type="checkbox" name="question" value="building envelope upgrade" onclick="updateRetro(this)"> Building envelope upgrade <br>
+        <input type="checkbox" name="question" value="HVAC" onclick="updateRetro(this)"> HVAC replacement <br>
+        <input type="checkbox" name="question" value="others" onclick="updateRetro(this)"> Others <br>
+      </div>
+      
+      <button onclick = "returnTextSix()" class = "next">Next</button>
+    </div>
+    <div class = "questionSeven" style = "display:none">
+      <h1>Potential Sponsors</h1>
+      <div class = "amounts">
+        <h2 id = "amosss"></h2>
+      </div>
+
+      
+      <div class = "gethelp">
+        <button id = "register-btn" type = "submit" onclick = "wegotits()">Get a Luminous Employee to sign you up! </button>
+      </div>
+      <div class = "gethelp">
+        <label for="filter-names">Sort by: </label> 
+        <select name="filter" id="filters"> 
+          <option value = "None"> None </option>
+          <option value="Due Date">Due Date</option> 
+          <option value="Amount">Amount</option> 
+        </select>
+      </div>
+      <div class = "question-popup3" id = "questionPopup3" style = "display:none">
+        <div class = "question-popup-content3">
+          <button type="button" onclick="wegotits()" class = "noway">X</button>
+          <h1>Please select all of the organizations you would like a Luminous employee to sign you up for</h1>
+          <ul class = "elements">
+
+          </ul>
+          <button class = "filemaker" onclick = "wegotit()"> who and how to contact</button>
+          <button class = "filemaker" onclick = "filers()"> create the excel file </button>
+        </div>
+      </div>
+      <div class = "question-popup2" id = "questionPopup2">
+        <div class = "question-popup-content2">
+            <button type="button" onclick="wegotit()" class = "noway">X</button>
+            <h1> Luminous Employees to contact</h1>
+            <h2> You can send any of the three employees the CSV file</h2>
+            <h2>set the header as: YOUR COMPANY NAME Sponsorship Support</h2>
+            <h2>the content: the excel file and any additional information</h2>
+            <div class = "profiles">
+              <div class = "profile">
+                <img src = "https://media.discordapp.net/attachments/715996959655329943/1109238554179162123/blank-profile-picture-973460_1280.webp?width=1002&height=1002"> 
+                <h1 id = "nammma">Ms.Manar</h1>
+                <h2>Communications</h2>
+                <h2 id = "email">Contact: manar.moharam@luminousenergy.solutions</h2>
+              </div>
+              <div class = "profile" >
+                <img src = "https://media.discordapp.net/attachments/715996959655329943/1109238554179162123/blank-profile-picture-973460_1280.webp?width=1002&height=1002"> 
+                <h1 id = "nammma">Mr.Douglas</h1>
+                <h2>HR</h2>
+                <h2>Contact: douglas.stewart@luminousenergy.solutions </h2>
+              </div>
+              <!-- the select should have osme hover effect -->
+              <div class = "profile" >
+                <img src = "https://media.discordapp.net/attachments/715996959655329943/1109238554179162123/blank-profile-picture-973460_1280.webp?width=1002&height=1002"> 
+                <h1 id = "nammma">Mr.Yasser</h1>
+                <h2>CEO</h2>
+                <h2>Contact: yasser.elyamany@luminousenergy.solutions</h2>
+              </div>
+            </div>  
+        </div>
+      </div>
+      <div class = "popups">
+        <h1></h1>
+      </div>
+      <div class = "everything">
+        <div class = "results">
+          <!-- this is where everything goes -->
+        </div>
+        <div class = "standard" id = "standard">
+            <p>no sponsor has been selected</p>
+        </div>
+
+      
+        <div class = "further" id = "further" style = "display: none">
+            <button class = "collapse" id = "collapse" onclick = "colp()"> close </button>
+            <h1 id = "name">Name of company</h1>
+            <div class = "infoss">
+              <p id = "deadline">Deadline: </p>
+              <p id = "amount">Amount: </p>
+            </div>
+
+            <h2 id = "info">Information full</h2>
+            <div class = "nextsteps">
+            <a id="signupLink" href = "https://github.com/">Apply</button>
+
+            </div>
+
+
+        </div>
+      </div>
+
+    </div>
+  </body>
+</html>
+
+<script>
+  //loading the json file 
+  //var jsons = here insert it 
+  //then you have to stringy it 
+  var jsonData = [{
+   "program_name": "Energy saving for business",
+   "link": "https://www.eralberta.ca/energy-savings-for-business/esb-program-overview/", 
+   "infomration": "The Energy Savings for Business Program aims to assist qualifying businesses in Alberta by enabling them to reduce emissions, lower operating expenses, expand their operations, and enhance competitiveness while also generating skilled job opportunities and promoting economic recovery. The program acknowledges that businesses in Alberta value time as much as money, and as such, it will provide an efficient application process, prompt response times, a comprehensive range of technology options, and timely, easily understandable information. The Energy Savings for Business Program offers businesses rapid access to incentives for cost-effective efficiency measures. The program provides up to $250,000 per project, up to $1 million per parent company for the cost of products and services, and a minimum incentive amount of $500 (which is a new addition to the program).", 
+   "applicance eligibility": "any",
+   "location elgibility": "Small and medium scaled, Enterprise in alberta, Business, no profit, Cant be government owned, Common spaces and equipments, Individual businesses, Non profit organization, Co-operatives, Farms ",
+   "amount": "unknown",
+   "provinces": "alberta",
+   "fedral": "no",
+   "scope list": "building envelope uprgrade, HVAC, others",
+   "due": "September 30, 2023"
+  },
+  {
+   "program_name": "Comprehensive energy savings",
+   "link": "https://www.eralberta.ca/energy-savings-for-business/comprehensive-energy-savings/", 
+   "infomration": "The Comprehensive Energy Savings (CES) program provides extra financial incentives to encourage participants to bundle efficiency measures and incorporate new technology types, which aids facilities in achieving greater energy savings and emissions reductions. When smaller capital investments are combined into a larger investment package, participants can take advantage of higher incentives and achieve more significant long-term outcomes, including reduced operating costs and increased emissions reductions. The CES program's financial incentives for retrofits and upgrades help alleviate some of the capital costs while simultaneously pushing Alberta towards its net-zero greenhouse gas (GHG) emissions objectives.", 
+   "applicance eligibility": "On-site generation and renewables, Lighting, Space, process and water heating, Cooling and ventilation, Compressed air, Refrigeration and food services, Motors and drives, Building envelope and windows",
+   "location elgibility": "Small and medium scaled, Enterprise in alberta, Business, no profit, Cant be government owned, Common spaces and equipments, Individual businesses, Non profit organization, Co-operatives, private schools not eligible for government funding, Farms regist",
+   "amount": "unknown",
+   "provinces": "alberta",
+   "fedral": "no",
+   "scope list": "retrofits, HVAC, building envelope upgrade", 
+   "due": "March 15, 2024"
+  },
+  {
+   "program_name": "Expanded technologies pilot",
+   "link": "https://www.eralberta.ca/energy-savings-for-business/expanded-technologies-pilot/", 
+   "infomration": ". ETP offers a new pathway for Alberta businesses to propose effective, commercially viable technologies not currently supported through ESB, that could offer high return on investment.", 
+   "applicance eligibility": "lighting controls, daylight controls, occupancy controls, bi-level control, combined heat and power, waste heat recovery, groundsource heat pump, boilers, condensing unit heaters, boiler and heater controls, high efficnecy furnaces, chillers, rooftop, condesing make-up air unit, heat and energy recovery ventilators, demand control ventilation, destratifcation fans, HVAC pipe insulation, packaged terminal heat pumps, steam traps, economizers, steam fittings and pipe insulation, direct contact water heater, condensing storage tank water heater, condensing tankless water heater, water heater jacket, ovens, fryers, griddles, steam cookers, dishwashers, demand control kitchen ventilation, solar preheating of intake air, greenhouse top lighting, high effciency windows, ceeling and wall insulation, air curtains and door dock seals, bay LED fixture, linear led fixture replacement or retrofit, accent, exterior LED fixtures, refigerated case lighting LED, troffer fixtures and kits, LED exit signs, downlight fixtures and retrofit kits, strip curtain, night covers, evaporator fan control, automatic door closer, anti-sweat heater controls, low pressure drop filter, compressed air storage, nozzels, zero loss drain, VSD air compressor, VFD for fan or pump motor, notched or synchronous belt retorifts, ODP,TEFC",
+   "location elgibility": "anyone",
+   "amount": 250000,
+   "provinces": "alberta",
+   "fedral": "no",
+   "scope list": "others",
+   "due": "April 1, 2024"
+  },
+  {
+   "program_name": "Small producers energy efficiency deployment",
+   "link": "https://www.eralberta.ca/energy-savings-for-business/speed/", 
+   "infomration": "SPEED, which stands for Small Producers Energy Efficiency Deployment, is an initiative that builds upon the Energy Savings for Business program to aid eligible oil and gas producers in Alberta in reducing greenhouse gas emissions and promoting job growth. This program has widened its criteria and incorporated new forms of technology to expedite the implementation of established enhancements that enable producers to lower operating costs, enhance competitiveness, and contribute to economic recovery. Under SPEED, eligible companies can take advantage of incentives of up to $1 million per parent organization for the implementation of energy-efficient and cost-saving technologies.", 
+   "applicance eligibility": "air fuel ratio controllers, high efficieny engines, pump jack electrification",
+   "location elgibility": "oil and gas producer ",
+   "amount": 10000,
+   "provinces": "alberta",
+   "fedral": "no",
+   "scope list": "building envelope upgrade, HVAC, others",
+   "due": "September 30, 2023"
+  },
+  {
+   "program_name": "Clean energy improvement program",
+   "link": "https://ceip.abmunis.ca/commercial/upgrades/", 
+   "infomration": "The Commercial Energy Improvement Program (CEIP) is a program provided by the Alberta Municipal Solar Program (AMSP) that offers incentives for commercial businesses in Alberta, Canada, to make energy efficiency upgrades. The program provides funding for projects such as lighting upgrades, heating, ventilation and air conditioning (HVAC) upgrades, building envelope improvements, and renewable energy installations. Businesses can receive up to 25% of the project costs as a rebate, up to a maximum of $300,000 per project. The program aims to help businesses reduce their energy consumption and greenhouse gas emissions, lower their energy costs, and contribute to a cleaner, more sustainable energy future for Alberta.", 
+   "applicance eligibility": "any",
+   "location elgibility": "anyone",
+   "amount": "unknown",
+   "provinces": "alberta",
+   "fedral": "no",
+   "scope list": "building envelope upgrade, HVAC, others", 
+   "due": "Always open"
+  },
+  {
+   "program_name": "Industrial energy efficiency program",
+   "link": "https://saveonenergy.ca/for-business-and-industry/programs-and-incentives/industrial-energy-efficiency-program", 
+   "infomration": "The Industrial Energy Efficiency Program, offered by Save on Energy in Ontario, Canada, is a program designed to help industrial businesses in the province reduce their energy consumption, costs, and greenhouse gas emissions. The program offers incentives for eligible projects, such as energy audits, process improvements, equipment upgrades, and renewable energy projects. Businesses can receive up to 50% of the project costs as an incentive, and the program is designed to help businesses implement energy-saving measures that provide long-term benefits. The program also offers technical support to businesses throughout the project planning and implementation stages, as well as tools and resources to help businesses identify opportunities for energy savings. Overall, the program aims to support Ontario's goal of building a more sustainable, low-carbon economy.", 
+   "applicance eligibility": "commerically avaliable material",
+   "location elgibility": "anyone",
+   "amount": "unknown",
+   "provinces": "ontairo",
+   "fedral": "no",
+   "scope list": "others",
+   "due": "August 15, 2023"
+  },
+  {
+   "program_name": "Energy manager program",
+   "link": "https://natural-resources.canada.ca/energy-manager-program/21917", 
+   "infomration": "The Energy Manager Program is a Canadian government initiative that provides funding for industrial and commercial organizations to hire an Energy Manager. The Energy Manager helps these organizations improve their energy efficiency, identify energy-saving opportunities, implement energy-efficient technologies and practices, and track their energy use and savings over time. The program also offers training, resources, and networking opportunities to increase energy efficiency, reduce energy costs, lower greenhouse gas emissions, and improve competitiveness.", 
+   "applicance eligibility": "none",
+   "location elgibility": "small and medium sized enterprises, municipalities, universities, colleges, schools, and hospitals",
+   "amount": 50000,
+   "provinces": "ontairo",
+   "fedral": "no",
+   "scope list": "hiring, others", 
+   "due": "Always open"
+  },
+  {
+   "program_name": "Green industrial facilities and manufacturing program ",
+   "link": "https://natural-resources.canada.ca/energy-efficiency/energy-efficiency-for-industry/green-industrial-facilities-and-manufacturing-program/20413", 
+   "infomration": "The Green Industrial Facilities and Manufacturing (GIFM) program is a Canadian government initiative aimed at helping industrial facilities and manufacturers across the country reduce their energy consumption, greenhouse gas emissions, and operating costs. The program provides funding and technical support for energy efficiency assessments, feasibility studies, and capital projects to implement energy-saving measures such as equipment upgrades, process improvements, and building envelope enhancements. Businesses can receive up to 50% of the project costs as a non-repayable contribution, with a maximum of $250,000 per project. The program also offers support for innovation and demonstration projects that advance the adoption of clean technologies in the industrial sector. The GIFM program is part of Canada's broader strategy to transition to a low-carbon economy and support the country's climate change commitments.", 
+   "applicance eligibility": "none",
+   "location elgibility": "small and medium-sized enterprises, large businesses",
+   "amount": "unknown",
+   "provinces": "all",
+   "fedral": "yes",
+   "scope list": "others", 
+   "due": "July 31, 2023"
+  },
+  {
+   "program_name": "Energy manager program",
+   "link": "https://natural-resources.canada.ca/energy-manager-program/21917", 
+   "infomration": "The Energy Manager Program is a Canadian government initiative that provides funding for industrial and commercial organizations to hire an Energy Manager. The Energy Manager helps these organizations improve their energy efficiency, identify energy-saving opportunities, implement energy-efficient technologies and practices, and track their energy use and savings over time. The program also offers training, resources, and networking opportunities to increase energy efficiency, reduce energy costs, lower greenhouse gas emissions, and improve competitiveness.", 
+   "applicance eligibility": "none",
+   "location elgibility": "small and medium sized enterprises, municipalities, universities, colleges, schools, and hospitals",
+   "amount": 50000,
+   "provinces": "saskatchewan",
+   "fedral": "no",
+   "scope list": "hiring, others",
+   "due": "Unknown"
+  },
+  {
+   "program_name": "Energy manager program",
+   "link": "https://natural-resources.canada.ca/energy-manager-program/21917", 
+   "infomration": "The Energy Manager Program is a Canadian government initiative that provides funding for industrial and commercial organizations to hire an Energy Manager. The Energy Manager helps these organizations improve their energy efficiency, identify energy-saving opportunities, implement energy-efficient technologies and practices, and track their energy use and savings over time. The program also offers training, resources, and networking opportunities to increase energy efficiency, reduce energy costs, lower greenhouse gas emissions, and improve competitiveness.", 
+   "applicance eligibility": "none",
+   "location elgibility": "small and medium sized enterprises, municipalities, universities, colleges, schools, and hospitals",
+   "amount": 50000,
+   "provinces": "manitoba",
+   "fedral": "no",
+   "scope list": "hiring, others",
+   "due": "Unknown"
+  },
+  {
+   "program_name": "Energy manager program",
+   "link": "https://natural-resources.canada.ca/energy-manager-program/21917", 
+   "infomration": "The Energy Manager Program is a Canadian government initiative that provides funding for industrial and commercial organizations to hire an Energy Manager. The Energy Manager helps these organizations improve their energy efficiency, identify energy-saving opportunities, implement energy-efficient technologies and practices, and track their energy use and savings over time. The program also offers training, resources, and networking opportunities to increase energy efficiency, reduce energy costs, lower greenhouse gas emissions, and improve competitiveness.", 
+   "applicance eligibility": "none",
+   "location elgibility": "small and medium sized enterprises, municipalities, universities, colleges, schools, and hospitals",
+   "amount": 50000,
+   "provinces": "new brunswick",
+   "fedral": "no",
+   "scope list": "hiring, others",
+   "due": "Unknown"
+  },
+  {
+   "program_name": "Deep Retrofit program",
+   "link": "https://natural-resources.canada.ca/energy-efficiency/buildings/deep-retrofit-accelerator-initiative/24925", 
+   "infomration": "The Deep Retrofit Accelerator Initiative is a Canadian government program designed to accelerate the pace of deep energy retrofits in commercial and multi-unit residential buildings across the country. The program provides funding, technical expertise, and market intelligence to building owners and managers, with the goal of achieving energy savings of 50% or more through comprehensive building retrofits. The program works with partners in the private sector, including utilities, energy service companies, and financial institutions, to identify opportunities for deep retrofit projects and provide financing solutions that enable building owners to invest in energy efficiency upgrades. ", 
+   "applicance eligibility": "none",
+   "location elgibility": "anyone",
+   "amount": "unknown",
+   "provinces": "all",
+   "fedral": "yes",
+   "scope list": "iso 50001 compliance, energy management, monitoring submetering, training, hiring, retrofits, building envelope upgrade, others",
+   "due": "Always open"
+  
+  }, 
+  {
+   "program_name": "ECO preformance",
+   "link": "https://transitionenergetique.gouv.qc.ca/affaires/programmes/ecoperformance", 
+   "infomration": "Energy management project for your industrial facility, you can receive financial aid to support it. Natural Resources Canada (NRCan) offers up to 50% of eligible expenses, with a maximum of $40,000 per facility. This financial assistance can be used in conjunction with other funding sources, but NRCan may adjust their contribution to ensure that all public funding sources combined do not exceed 75% of the total eligible project costs.", 
+   "applicance eligibility": "none",
+   "location elgibility": "anyone",
+   "amount": 40000,
+   "provinces": "quebec",
+   "fedral": "yes",
+   "scope list": "iso 50001 compliance, iso 50001",
+   "due": "Always open"
+  },     
+  {
+   "program_name": "ÉNERGIR ENERGY MANAGEMENT SYSTEM",
+   "link": "https://transitionenergetique.gouv.qc.ca/affaires/programmes/ecoperformance", 
+   "infomration": "Provides funding for Diagnostic Evaluation, Planning and Implementing, and Energy Savings Tracking for the program that you would like to sign up for in terms of reducing your yearly energy consumption. ", 
+   "applicance eligibility": "none",
+   "location elgibility": "anyone",
+   "amount": 350000,
+   "provinces": "quebec",
+   "fedral": "yes",
+   "scope list": "others",
+   "due": "Always open"
+
+  }, 
+  {
+   "program_name": "Hydro Quebec",
+   "link": "https://www.hydroquebec.com/affaires/programmes-outils/gestion-energie-electrique.html", 
+   "infomration": "It's possible to optimize your plant's electrical energy consumption without the need to purchase new equipment. By implementing an electrical energy management system (SGEE), you'll be able to identify the necessary steps to achieve this goal. Additionally, the system will provide information on the recurring savings you can expect, while enabling you to take advantage of financial support from Hydro-Quebec.", 
+   "applicance eligibility": "none",
+   "location elgibility": "anyone",
+   "amount": 175000,
+   "provinces": "quebec",
+   "fedral": "yes",
+   "scope list": "others",
+   "due": "Always open"
+
+  }, 
+  {
+   "program_name": "BC Hydro",
+   "link": "https://www.bchydro.com/powersmart/business/programs/energy-management/iem.html", 
+   "infomration": "You can receive funding to hire an industrial energy manager who will assist with your business' energy usage, invest in energy efficiency measures, and monitor long-term savings. This includes up to 75% of the energy manager's salary, 100% funding for energy management consulting services, training for the new energy manager, an on-site energy management assessment, funding for energy monitoring and targeting up to $80,000, a planning workshop, and employee engagement activities such as training and awareness events.", 
+   "applicance eligibility": "none",
+   "location elgibility": "anyone",
+   "amount": 80000,
+   "provinces": "british columbia",
+   "fedral": "yes",
+   "scope list": "hiring, others", 
+   "due": "Always open"
+  },    
+  {
+   "program_name": "Manitoba Hydro",
+   "link": "https://www.hydro.mb.ca/your_business/benchmarking/energy_management/", 
+   "infomration": "The goal is to discover inexpensive energy management measures and devise an energy management strategy for industrial facilities. The tailored program involves conducting a site walk-through with plant and energy systems personnel to detect processes and equipment that can lead to energy reductions. Energy systems staff will then evaluate electrical usage patterns and the performance of major electrical equipment by analyzing past data. Afterward, prospective projects, including a basic energy management system for electrical and natural gas monitoring, will be identified, with budget pricing provided.", 
+   "applicance eligibility": "none",
+   "location elgibility": "anyone",
+   "amount": "unknown",
+   "provinces": "manitoba",
+   "fedral": "yes",
+   "scope list": "hiring, others",
+   "due": "Always open"
+  }, 
+  {
+   "program_name": "Energy Performance Program",
+   "link": "https://saveonenergy.ca/For-Business-and-Industry/Programs-and-incentives/Energy-Performance-Program", 
+   "infomration": "The Energy Performance Program, offered by Save on Energy for businesses and industries in Ontario, provides incentives to organizations that adopt energy-saving measures. The program offers funding for energy audits, training, and energy-efficient equipment upgrades. Participants who meet the program's criteria are eligible for financial incentives based on the amount of energy they save. The objective of the program is to help organizations reduce their energy consumption, lower their energy costs, and enhance their overall energy efficiency.", 
+   "applicance eligibility": "none",
+   "location elgibility": "anyone",
+   "amount": 150000,
+   "provinces": "ontario",
+   "fedral": "yes",
+   "scope list": "training, hiring, others",
+   "due": "Always open"
+  }, 
+  {
+   "program_name": "Efficency Nova Scotia",
+   "link": "https://www.efficiencyns.ca/business/", 
+   "infomration": "Provides funding for Audits, Planning, and Implementation and Operation", 
+   "applicance eligibility": "none",
+   "location elgibility": "anyone",
+   "amount": 150000,
+   "provinces": "nova scotia",
+   "fedral": "yes",
+   "scope list": "training, hiring, others", 
+   "due": "Always open"
+  }, 
+  {
+   "program_name": "Government of P.E.I",
+   "link": "https://www.princeedwardisland.ca/en/information/environment-energy-and-climate-action/community-energy-solutions", 
+   "infomration": "Community Energy Solutions provides incentives for energy efficiency upgrades that cover up to 50% of the total cost, with a maximum of $25,000. These incentives can fund upgrades to heating systems, ventilation, thermostats, and controls, among other things. The incentive amount is calculated as the lower of either the annual savings or 50% of the project cost up to $25,000. For larger operations using more than 350,000 kWh annually, custom energy solutions may be available, including funding for a feasibility study and access to an onsite energy manager who will monitor energy savings to ensure the project performs as planned. Investing in energy efficiency will reduce energy consumption and help manage operating costs.", 
+   "applicance eligibility": "none",
+   "location elgibility": "anyone",
+   "amount": 25000,
+   "provinces": "nova scotia",
+   "fedral": "yes",
+   "scope list": "training, hiring, others",
+   "due": "Always open"
+  }]
+  //var jsonDataElem = document.getElementById("json-data");
+  //var jsonData = JSON.parse(jsonDataElem.innerHTML);
+  console.log(jsonData);
+  let images = {"british columbia": "https://media.discordapp.net/attachments/715996959655329943/1114014364635242626/BC.svg.png?width=1126&height=900",
+  "prince edward island": "https://media.discordapp.net/attachments/715996959655329943/1114014365276983396/Flag_map_of_Prince_Edward_Island.png?width=1126&height=824",
+  "nunavut": "https://media.discordapp.net/attachments/715996959655329943/1114014365541220442/Flag_Map_of_Nunavut.png?width=1026&height=1228",
+  "northwest territories": "https://media.discordapp.net/attachments/715996959655329943/1114014365822242877/NWTerritories.png?width=786&height=1228",
+  "canada": "https://media.discordapp.net/attachments/715996959655329943/1114014366073888929/Flag_map_of_Greater_Canada.png?width=1126&height=738",
+  "alberta": "https://media.discordapp.net/attachments/715996959655329943/1114014395840868352/Alberta-flag_contour.png?width=918&height=1228",
+  "quebec": "https://media.discordapp.net/attachments/715996959655329943/1114014396046381117/Flag-map_of_Quebec_-_original.svg.png?width=990&height=1228", 
+  "nova scotia": "https://media.discordapp.net/attachments/715996959655329943/1114014396260302979/Flag_map_of_Nova_Scotia.png?width=1126&height=890", 
+  "ontario": "https://media.discordapp.net/attachments/715996959655329943/1114014396499374091/Flag_Map_of_Ontario.png?width=1126&height=1126",
+  "saskatchewan": "https://media.discordapp.net/attachments/715996959655329943/1114014396738441276/SASK.svg.png?width=568&height=1226",
+  "manitoba": "https://media.discordapp.net/attachments/715996959655329943/1114014397044641813/Flag_map_of_Manitoba.png?width=996&height=1228", 
+  "newfoundland and labrador": "https://media.discordapp.net/attachments/715996959655329943/1114014397304680488/NEWFOUNDLAND.svg.png?width=854&height=1226",
+  "new brunswick": "https://media.discordapp.net/attachments/715996959655329943/1114014397619245116/new_brunswick.svg.png?width=1126&height=1084",
+  "yukon": "https://media.discordapp.net/attachments/715996959655329943/1114014966282993836/yukon.png?width=700&height=1228"
+  }
+  //defining the varaibles used
+  let company = "";
+  let province = "";
+  let archetype = "";
+  let materials = "";
+  let retrofits = [];
+  let indexProv = [];
+  let indexArch = []; 
+  let due = []; 
+  let provinces = []; 
+  let indexApp = [];
+  let indexRetro = [];
+  let finalIndex =[]; 
+  let retros = {};
+  let mater = {};
+  let types = {};
+  let name = ""; 
+  let sponsorNames = [];
+  let link  = []; 
+  let info = []; 
+  let amount = [];
+  let returnSave = ''; 
+  let sponsors = ''; 
+  var information = {}; 
+  const amountValues = []; 
+  let selectedElements = []; 
+  function colp(){
+    var ok = document.getElementById("further");
+    ok.style.display = "none"; 
+    var sd = document.getElementById("standard");
+    sd.style.display = "block"; 
+  }
+
+  var selectElement = document.getElementById("filters");
+
+  selectElement.addEventListener("change", function() {
+    var selectedOption = selectElement.value;
+    console.log("Selected option: " + selectedOption);
+
+    // Perform your desired action based on the selected option
+   if (selectedOption === "Due Date") {
+      finalSponsors("finaldue"); 
+    } else if (selectedOption === "Amount") {
+      finalSponsors("amount");
+    } 
+  });
+
+  //first question from the user, there is nothing to process there
+  function returnText() {
+    const input = document.getElementById("question");
+    company = input.value;
+    console.log(company); 
+    name = company; 
+    var usernameElement = document.getElementById("username");
+    usernameElement.innerHTML = "Username: " + name;
+    document.querySelector(".questionOne").style.display = "none";
+    document.querySelector(".questionTwo").style.display = "block";
+  }
+
+  //getting the proviences it is in
+  function returnTextTwo() {
+    const input = document.getElementById("questiontwo");
+    const user = document.getElementById("username"); 
+    var usernameElement = document.getElementById("username");
+    usernameElement.innerHTML = "Username: " + name;
+    user.style.display = "block";  
+    province = input.value;
+    console.log(province); 
+    province = province.toLowerCase()
+    var provinces = ['alberta', 'ontario', 'british columbia', 'saskatchewan', 'manitoba', 'nova scotia', 'new brunswick', 'newfoundland and labrador', 'prince edward island', 'northwest territories', 'yukon', 'nunavut', 'quebec'];
+    document.querySelector(".questionTwo").style.display = "none";
+    document.querySelector(".questionThree").style.display = "block";
+    console.log(); 
+    //why does alberta vs Alberta work...? 
+    for(let x = 0; x < jsonData.length; x++){
+
+      if(jsonData[x]['provinces'] == province || jsonData[x]['provinces'] == "all"){
+        if(provinces.some(provinceb => provinceb.toLowerCase() === province.toLowerCase())){
+          indexProv.push(x); 
+        }
+      }
+    }
+    console.log(indexProv); 
+  }
+
+  
+  function select(element){
+
+
+        // Retrieve the element with id "nammma" within the selected div
+    var nammmaElement = element.querySelector("#nammma");
+    
+    // Access the text content of the "nammma" element
+    var nammmaText = nammmaElement.textContent;
+    alert("We have now conacted " + nammmaText); 
+    //var h1Content = element.getElementById('nammma').innerHTML;
+    //alert("We have sent the information to: " + h1Content); 
+  }
+
+  //getting the facility type 
+  function returnTextThree() {
+    const input = document.getElementById("questionthree");
+    archetype = input.value;
+    archetype = archetype.toLowerCase();
+    console.log(archetype); 
+    document.querySelector(".questionThree").style.display = "none";
+    document.querySelector(".questionFour").style.display = "block";
+    let types = {}; 
+    for(let p = 0; p < jsonData.length; p++){
+      types[p] = jsonData[p]['location elgibility'].split(",").map(str => str.trim());
+    }
+    console.log(types); 
+
+    for (let item in types){
+      for(let x in types[item]){
+        if(types[item][x] == archetype || types[item][x] == "anyone"){
+          indexArch.push(item); 
+        }
+      }
+    }
+    console.log(indexArch); 
+  }
+
+  //getting the appliances that will be used 
+  function returnTextFour() {
+    const input = document.getElementById("questionfour");
+    materials = input.value;
+    materials = materials.toLowerCase(); 
+    materialsList = materials.split(",").map(str => str.trim()); 
+    console.log(materialsList); 
+    console.log(materials); 
+    document.querySelector(".questionFour").style.display = "none";
+    document.querySelector(".questionFive").style.display = "block";
+    for(let x = 0; x < jsonData.length; x++){
+      mater[x] = jsonData[x]['applicance eligibility'].split(",").map(str => str.trim()); 
+    }
+    console.log(mater); 
+    for(let app in materialsList){
+      for(let itemTwo in mater){
+        for(let xTwo in mater[itemTwo]){
+          if(mater[itemTwo][xTwo] == "any" || mater[itemTwo][xTwo] == materialsList[app] || mater[itemTwo][xTwo] == "none"){
+            indexApp.push(itemTwo); 
+          }
+        }
+      }
+    }
+    console.log(indexApp); 
+  }
+  
+  //getting the retrofits 
+  function returnTextFive() {
+    const input = document.getElementById("questionfive");
+    retrofits = input.value.split(",").map(str => str.trim());
+    console.log(retrofits); 
+    document.querySelector(".questionFive").style.display = "none";
+    document.querySelector(".questionSix").style.display = "block";
+    for(let a = 0; a < jsonData.length; a++){
+      retros[a] = jsonData[a]['scope list'].split(',').map(str => str.trim()); 
+    }
+
+    console.log(retros);
+  }
+  
+
+  function updateRetro(checkbox) {
+    if (checkbox.checked) {
+      retrofits.push(checkbox.value);
+    } else {
+      retrofits = retrofits.filter((retrofit) => retrofit !== checkbox.value);
+    }
+  }
+  
+  function updatingRetro(){
+    //what about we pass the retrofits and then it does the operation on that..?
+    console.log("heyylo"); 
+    console.log(retrofits); 
+    console.log(retros); 
+    for(let ins in retrofits){
+      for(let sss in retros){
+        for(let ppp in retros[sss]){
+          // why is this taking so much in =>
+          if((retros[sss][ppp] == "others") || (retros[sss][ppp] == retrofits[ins]) && (!indexRetro.includes(sss.toString()))){
+            indexRetro.push(sss); 
+          }
+          indexRetro = indexRetro.filter(function(item, index) {
+            return index === indexRetro.indexOf(item);
+          });
+        }
+      }
+    }
+    console.log("SDFGHJKHGFGHJ"); 
+    console.log(indexRetro); 
+  }
+
+  //these are the storage of the values
+  function returnTextSix() {
+    updatingRetro(); 
+    console.log(company);
+    console.log(province);
+    console.log(archetype);
+    console.log(materials);
+    console.log(retrofits);
+    document.querySelector(".questionSix").style.display = "none";
+    document.querySelector(".questionSeven").style.display = "block";
+    //here is where we get all of the possible places that are eligible
+    //loop through the size of it all and if there are any overlaps pass it
+    //ands: province and archetype
+    //ors: materials and retrofits
+    indexProv = indexProv.map(x => parseInt(x));
+    console.log(indexProv);
+    indexArch = indexArch.map(x => parseInt(x));
+    console.log(indexArch);
+    indexApp = indexApp.map(x => parseInt(x));
+    console.log(indexApp); 
+    indexRetro = indexRetro.map(x => parseInt(x));
+    console.log(indexRetro); 
+    finalIndex = finalIndex.map(x => parseInt(x));
+    console.log(finalIndex); 
+
+    //indexProv and indexArch are a must = 1 boom
+
+    for(let ll = 0; ll < jsonData.length; ll++){
+      if((indexProv.includes(ll) && indexArch.includes(ll)) && (indexApp.includes(ll) || indexRetro.includes(ll))){
+        finalIndex.push(ll); 
+      }
+    }console.log(finalIndex); 
+
+    finalSponsors("starter");
+    //now that we have those values, we can then get the values and the list 
+  }
+  function finalSponsors(starts){
+    for(let b in finalIndex){
+      sponsorNames[b] = jsonData[finalIndex[b]]['program_name']; 
+      amount[b] = jsonData[finalIndex[b]]['amount']; 
+      link[b] = jsonData[finalIndex[b]]['link']; 
+      info[b] = jsonData[finalIndex[b]]['infomration']; 
+      due[b] = jsonData[finalIndex[b]]['due'];
+      provinces[b] = jsonData[finalIndex[b]]['provinces'];
+    }
+    console.log("HEYYY THIS IS TO TEST IT OUT"); 
+    console.log(sponsorNames);
+    console.log("H");  
+    console.log(amount); 
+    console.log(link); 
+    console.log(info); 
+    console.log(due); 
+    
+    console.log(amount);
+    console.log(sponsorNames); 
+  
+    if(amount.length == 0){
+      returnSave = ""
+      sponsorNames[0] = "There are no sponsors avaiable for your facility, please try again soon"; 
+    }
+  
+    let uk = 0;
+    let value = 0;
+    
+    for(let d in amount){
+      if(amount[d] == "unknown"){
+        uk++;
+      }
+      else{
+        value += parseInt(amount[d]); 
+      }
+    }
+  
+    if(uk == amount.length){
+      returnSave = "Amount is unknown"; 
+    }
+    else{
+      returnSave = "A rough estimate of: " + value + " in CAD"; 
+    }
+    //include and add the returnSave onto the screen 
+    var ca = document.getElementById("amosss"); 
+    ca.innerHTML = "SAVINGS: " + returnSave; 
+
+
+    const sizex = sponsorNames.length;
+    for (let i = 0; i <= sizex; i++) {
+      const myDictionary = {
+        link: 'value1',
+        description: 'value2', 
+        amount: 'sdf', 
+        deadline: 'asdasd', 
+        province: 'weee'
+      };
+      myDictionary.link = link[i];
+      myDictionary.amount = amount[i]; 
+      myDictionary.description = info[i];
+      myDictionary.deadline = due[i];
+      myDictionary.province = provinces[i]; 
+      information[sponsorNames[i]] = { ...myDictionary }; 
+    }
+
+
+    console.log("display"); 
+    console.log(sponsorNames); 
+    console.log(information); 
+    var names = ["hey", "bom", "funky", "twitter"];
+    console.log("trying this out"); 
+    console.log(information); 
+    // it plots based off of sponsorNames.... so organize them based off of that
+    //sponsorNames.sort();
+    console.log("called"); 
+    //we need to delete 
+
+    if(starts == "finaldue"){
+      console.log("IT HAS BEEN SELECTED");
+      const resultsDiv = document.querySelector(".results");
+      var difs = {};
+      // Remove all child elements within the resultsDiv
+      while (resultsDiv.firstChild) {
+        resultsDiv.firstChild.remove();
+      } 
+      var keys =  Object.keys(information);
+      console.log(keys); 
+      console.log(information); 
+      var objectName, nestedObject, nestedValue;
+      var name = "deadline";
+      for(var key in information) {
+          for(var secondKey in information[key]){
+              if(secondKey == name){
+              objectName = key;
+              nestedObject = secondKey;
+              nestedValue = information[key][secondKey]; 
+              console.log(objectName + ', ' + nestedObject + ', ' + nestedValue);
+              difs[objectName] = nestedValue;
+            }
+         }
+      }
+      delete difs.undefined;
+
+      var sortedDictionary = Object.fromEntries(
+        Object.entries(difs).sort((a, b) => {
+          if (a[1] === 'Always open') return 1;
+          if (b[1] === 'Always open') return -1;
+          return new Date(a[1]) - new Date(b[1]);
+        })
+      );
+     // var sortedDictionary = Object.fromEntries(
+     //   Object.entries(dictionary).sort((a, b) => new Date(a[1]) - new Date(b[1]))
+     // );
+     // console.log(sortedDictionary);
+
+    }
+
+    if(starts == "amount") {
+      const resultsDiv = document.querySelector(".results");
+      var difs = {};
+      // Remove all child elements within the resultsDiv
+      while (resultsDiv.firstChild) {
+        resultsDiv.firstChild.remove();
+      } 
+      console.log("we are in");
+      var keys =  Object.keys(information);
+      console.log(keys); 
+      var objectName, nestedObject, nestedValue;
+      var name = "amount";
+      for(var key in information) {
+          for(var secondKey in information[key]){
+              if(secondKey == name){
+              objectName = key;
+              nestedObject = secondKey;
+              nestedValue = information[key][secondKey]; 
+              console.log(objectName + ', ' + nestedObject + ', ' + nestedValue);
+              if(nestedValue == "unknown"){
+                nestedValue = 0;
+              }
+              difs[objectName] = nestedValue;
+            }
+         }
+      }
+
+      delete difs.undefined;
+      // Convert the object into an array of key-value pairs
+      var sortedArray = Object.entries(difs);
+
+      // Sort the array in descending order based on the values
+      sortedArray.sort((a, b) => b[1] - a[1]);
+
+      // Convert the sorted array back into an object
+      var sortedObject = Object.fromEntries(sortedArray);
+
+      console.log(sortedObject);
+
+      var keys = Object.keys(sortedObject);
+      
+      //have to remove undefined
+      console.log("these are the keys: " + Object.keys(sortedObject)); 
+      sponsorNames = keys; 
+      //sponsorNames = key; 
+    }
+
+    
+    //here find and sort the others
+
+    console.log(sponsorNames); 
+    sponsorNames.forEach(function(name) {
+      var info = information[name];
+      console.log("SXDCFVGBHNJHUBGYVFTCDRXDCFTVGBHN876546789");
+      console.log(info); //lets juse see this thing 
+      
+      var resultDiv = document.createElement('div');
+      resultDiv.className = 'result';
+      resultDiv.addEventListener('click', function(event) {
+        myFunction(event, info);
+      });
+      
+      const resultsDiv = document.querySelector(".results");
+      
+      var imDiv = document.createElement('div');
+      imDiv.className = 'im';
+      var imgElement = document.createElement('img');
+      //provinces 
+      let finalImage = ""; 
+      for (let key in images) {
+        console.log("start of a loop"); 
+        console.log(key);
+        console.log(info['province'])
+        if(info['province'] == 'all'){
+          info['province'] = 'canada'; 
+        }
+        console.log(key);
+        if (key === info['province']) {
+          finalImage = images[key]; 
+        }
+      }
+      console.log("THIS IS THE FINAL IMAGES VALUE"); 
+      console.log(finalImage)
+      
+      //here is the province stuff .... basically you have add it to the dicotnary than call back on it here it being images
+      //imgElement.src = 'https://media.discordapp.net/attachments/715996959655329943/1107760681891139664/perspective-dice-six-faces-random-icon-2048x2048-9uct7e7b.png?width=952&height=952';
+      imgElement.src = finalImage; 
+      imDiv.appendChild(imgElement);
+      
+      var infDiv = document.createElement('div');
+      infDiv.className = 'inf';
+      var h1Element = document.createElement('h1');
+      h1Element.textContent = name;
+      
+      infDiv.appendChild(h1Element);
+      resultDiv.appendChild(imDiv);
+      resultDiv.appendChild(infDiv);
+      
+      resultsDiv.appendChild(resultDiv);
+    });
+  
+  }
+  
+  // this is for the value of the thing we press on
+  function myFunction(event, info) {
+    console.log("Hello World!");
+    var furtherDiv = document.getElementById("further");
+    furtherDiv.style.display = "block"; 
+    var sd = document.getElementById("standard");
+    sd.style.display = "none"; 
+    var clickedDiv = event.target.closest('.result');
+    var h1Content = clickedDiv.querySelector('h1').innerHTML;
+    console.log('h1 content:', h1Content);
+    var h2Content = info.description;
+    console.log('h2 content:', h2Content);
+    
+    var amounts = document.getElementById("amount");
+    if(info.amount == "unknown"){
+      info.amount = "Unavaliable";
+    }
+    console.log("LOOOOOOOOOKKKKK HERE: "+ info); 
+    var deadlines = document.getElementById("deadline");
+    deadlines.innerHTML = "Deadline: " + info.deadline; 
+    amounts.innerHTML = "Amount: " + info.amount + " CAD"; 
+    var h1 = document.getElementById("name");
+    h1.innerHTML = h1Content;
+    var h2 = document.getElementById("info");
+    h2.innerHTML = h2Content;
+    var signupLink = document.getElementById("signupLink");
+    signupLink.href = info.link;
+
+  }
+  function wegotit() {
+        
+        event.preventDefault(); // prevent the form from submitting
+        var popup = document.getElementById("questionPopup2");
+        popup.style.display = popup.style.display === "none" ? "flex" : "none";
+
+
+
+
+        var email = document.getElementById("email").value;
+        var name = document.getElementById("name").value;
+        var password = document.getElementById("password").value;
+        var popupContent = document.querySelector(".question-popup-content2");
+        popupContent.innerHTML = "<h1>We have received your request and will email you once accepted</h1><p>You have signed up for:</p> Email: " + document.getElementById("email").value + " Name: " + document.getElementById("name").value + "";
+
+        console.log(email);
+        console.log(name);
+    }
+    
+    function filers(){
+      event.preventDefault(); // prevent the form from submitting
+      const elementsContainer = document.querySelector('.elements');
+      const checkboxes = elementsContainer.querySelectorAll('input[name="elements"]:checked');
+      const selectedElements = Array.from(checkboxes).map((checkbox) => checkbox.value);
+      var rows = [["Sponsor", "Website"]]
+      for (let i = 0; i < selectedElements.length; i++){
+        let temp = []; 
+        temp.push(selectedElements[i]);
+        temp.push(information[selectedElements[i]].link); 
+        rows.push(temp); 
+      }
+      
+      var text = rows.map(row => row.join(",")).join("\n");
+      var filename = name + "selected programs";
+  
+      download(filename, text);
+      
+      console.log(selectedElements); 
+    }
+    function hidePopup() {
+        var popup = document.getElementById("questionPopup2");
+        popup.style.display = "none";
+        var oes = document.getElementById("questionPopup3");
+        oes.style.display = "none"; 
+        
+    }
+    
+    window.onclick = function(event) {
+        var popup = document.getElementById("questionPopup2");
+        if (event.target == popup) {
+            hidePopup();
+        }
+    }
+
+  function wegotits() {
+    event.preventDefault(); // prevent the form from submitting
+    var popup = document.getElementById("questionPopup3");
+    popup.style.display = popup.style.display === "none" ? "flex" : "none";
+    const elements = sponsorNames; // List of elements
+  
+    // Get the elements container
+    const elementsContainer = document.querySelector('.elements');
+  
+    // Clear the container before adding checkboxes
+    elementsContainer.innerHTML = '';
+  
+    // Create checkboxes for each element
+    elements.forEach((element) => {
+      const checkbox = document.createElement('input');
+      checkbox.type = 'checkbox';
+      checkbox.value = element;
+      checkbox.name = 'elements';
+  
+      const label = document.createElement('label');
+      label.textContent = element;
+  
+      const listItem = document.createElement('li');
+      listItem.appendChild(checkbox);
+      listItem.appendChild(label);
+  
+      elementsContainer.appendChild(listItem);
+    });
+
+    }
+    
+    function hidePopups() {
+        var popup = document.getElementById("questionPopup3");
+        popup.style.display = "none";
+    }
+    
+    window.onclick = function(event) {
+        var popup = document.getElementById("questionPopup3");
+        if (event.target == popup) {
+            hidePopups();
+        }
+    }
+    function download(filename, text) {
+      var element = document.createElement('a');
+      element.setAttribute('href', 'data:text/csv;charset=utf-8,' + encodeURIComponent(text));
+      element.setAttribute('download', filename);
+      
+      element.style.display = 'none';
+      document.body.appendChild(element);
+      
+      element.click();
+      
+      document.body.removeChild(element);
+    }
+  
+  //now we process the values and give the write output
+  //loop through the dictonaries and store the index of the proviences
+  
+</script>

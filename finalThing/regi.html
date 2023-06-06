@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Customers Sponsorship Login Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src = "mov.js" ></script>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet">
+    <meta name = "viewport" content = "width=device-width, initial-scale = 0, user-scalable=no"> 
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <div class = "login-container">
+        <h1>Register</h1>
+        <!-- <form action = "/regi" method = "POST"> -->
+        <form>
+            <div> 
+                <label for = "email">Email</label>
+                <input type = "text" id = "email" name = "email" required>
+            </div>
+            <div>
+                <label for = "company">Name of Company</label>
+                <input type = "text" id = "name" name = "name" required> 
+            </div>
+            <div>
+                <label for = "company">Your Name</label>
+                <input type = "text" id = "name" name = "name" required> 
+            </div>
+            <div>
+                <label for = "province">Province</label>
+                <input type = "text" id = "Province" name = "Province" required> 
+            </div>
+            <div>
+                <label for = "facility">Type of facility</label>
+                <input type = "text" id = "facility" name = "facility" required> 
+            </div>
+            <div>
+                <label for = "password">Password</label>
+                <input type = "password" id = "password" name = "password" required> 
+            </div>
+
+            <div class = "question-popup2" id = "questionPopup2">
+                <div class = "question-popup-content2">
+                    <button type="button" onclick="wegotit()" class = "noway">X</button>
+                    <h1>We have received your request and will email you once accepted</h1>
+                    <p>You have signed up for:</p>    
+                </div>
+            </div>
+        </form>
+        <button id="register-btn" type = "submit" onclick = "wegotit()"> Send Request </button>
+    <a href = "home.html"> Back to home page</a>
+    </div> 
+  </body>
+</html>
+
+<script>
+    function wegotit() {
+        event.preventDefault(); // prevent the form from submitting
+        var popup = document.getElementById("questionPopup2");
+        popup.style.display = popup.style.display === "none" ? "flex" : "none";
+
+        var email = document.getElementById("email").value;
+        var name = document.getElementById("name").value;
+        var password = document.getElementById("password").value;
+        var popupContent = document.querySelector(".question-popup-content2");
+        popupContent.innerHTML = "<h1>We have received your request and will email you once accepted</h1><p>You have signed up for:</p> Email: " + document.getElementById("email").value + " Name: " + document.getElementById("name").value + "";
+
+        console.log(email);
+        console.log(name);
+    }
+    
+    function hidePopup() {
+        var popup = document.getElementById("questionPopup2");
+        popup.style.display = "none";
+    }
+    
+    window.onclick = function(event) {
+        var popup = document.getElementById("questionPopup2");
+        if (event.target == popup) {
+            hidePopup();
+        }
+    }
+</script>

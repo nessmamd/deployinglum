@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Customers Sponsorship Login Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet">
+    <meta name = "viewport" content = "width=device-width, initial-scale = 0, user-scalable=no"> 
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.8/xlsx.full.min.js"></script>
+  </head>
+  <body>
+    <h1>Present values</h1>
+    <input type="file" id="fileInput" />
+    <pre id = "json-data"  style = "display:none"><%= JSON.stringify(jsonFile, null, 2) %></pre>
+  </body>
+</html>
+<script>
+    var jsonDataElem = document.getElementById("json-data");
+    var jsonData = JSON.parse(jsonDataElem.innerHTML);
+    console.log(jsonData);
+    for(let x = 0; x < jsonData.length; x++){
+        console.log(jsonData[x]); 
+    }
+
+    //now we need to integrate them
+    
+
+    //now we need to store the variables 
+</script>

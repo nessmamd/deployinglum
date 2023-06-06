@@ -1,0 +1,807 @@
+*{
+    font-family: 'Oswald', sans-serif;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  .next{
+    display: block;
+    margin: 0 auto;
+  
+  }
+
+/* Use Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap');
+
+/* Apply Oswald font to all elements */
+/* Styles for the form container */
+.questionOne,
+.questionTwo,
+.questionThree,
+.questionFour,
+.questionFive {
+  display: flex;
+  margin-top: 150px;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.questionSix{
+
+  margin-top: 150px;
+
+}
+
+.projects{
+  margin-left: 500px; 
+}
+/* Styles for the question headings */
+h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+#okokok{
+  background-color: white;
+}
+
+.PageSlides h1{
+  font-size: 50px; 
+}
+
+.github-link {
+  color: #0366d6;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.github-link:hover {
+  text-decoration: underline;
+}
+
+.amounts {
+  width: 100%;
+  background-color: #2196F3;
+  color: #fff;
+  padding: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+/* Styles for the text inputs */
+input[type="text"] {
+  /* Remove width: 100%; */
+  max-width: 900px; /* Set a maximum width for the input */
+  /* Add margin: 0 auto; */
+}
+#info{
+  font-size: 15px;
+}
+
+.further p{
+  font-size: 20px; 
+}
+
+.nextsteps{
+  margin-top: 15px;
+}
+.profiles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+} 
+
+.profile {
+  width: 300px;
+  margin: 20px;
+  padding: 20px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.profile:hover {
+  background-color: #e0e0e0;
+}
+
+.profile h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.profile h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.profile p {
+  font-size: 14px;
+  color: #666;
+}
+
+.profile img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+.infoss{
+  padding-bottom: 20px;
+}
+/* Styles for the "Next" buttons */
+.next {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.next:hover {
+  background-color: #45a049;
+}
+
+/* Hide subsequent questions by default */
+.questionTwo,
+.questionThree,
+.questionFour,
+.questionFive,
+.questionSix {
+  display: none;
+}
+
+/* Set some default styles for headings */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+@keyframes increasePercentage {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+#percentage {
+  display: inline-block;
+  overflow: hidden;
+  animation: increasePercentage 2s linear;
+}
+
+@keyframes countAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#programCount {
+  animation: countAnimation 1s ease-in-out;
+}
+
+.theImages {
+  padding-top: 50px; 
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+.theImages img {
+  padding-left: 30px; 
+  object-fit: cover;
+  object-position: center;
+  margin: 10px;
+}
+
+#cla {
+  display: inline-block;
+  padding: 10px 20px;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  text-decoration: none;
+  background-color: #4CAF50;
+  color: #ffffff;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+#cla:hover {
+  background-color: #45a049;
+}
+
+h2{
+  font-size: 20px;
+}
+/* Apply some basic styles to the body */
+/* Set up the layout */
+.everything {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Style the result elements */
+.result {
+  display: flex;
+  align-items: center; 
+  flex: 1 1 300px;
+  margin: 0 10px 20px;
+  padding: 20px;
+  background-color: rgb(203, 255, 212);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.lum, a {
+  display: inline-block;
+  background-color: #2196F3;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  border: none; 
+  font-size: 18px;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+
+.lum:hover, a:hover {
+  background-color: #0D47A1;
+}
+
+.result:hover {
+  background-color: rgb(172, 248, 191);
+}
+
+.result h1 {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.result h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+
+.im {
+    margin-right: 20px; /* add space between the image and text */
+  }
+  
+  .im img {
+    width: 80px; /* set the image width */
+    height: 80px; /* set the image height */
+    object-fit: contain; /* maintain aspect ratio of the image */
+  }
+/* Style the further element */
+.further {
+  flex: 1;
+  margin-left: 30px;
+  padding: 20px;
+  background-color: rgb(211, 208, 208);
+  border-radius: 10px;
+}
+
+.standard {
+    flex: 1;
+    margin-left: 30px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+  }
+
+.further p, .further h1, .further h2 {
+  margin: 0;
+}
+
+.further #Link {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.further #collapse {
+  margin-top: 20px;
+  margin-left: auto;
+  padding: 10px 20px;
+  background-color: rgb(0, 128, 255);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.further #collapse:hover {
+  background-color: rgb(0, 105, 210);
+}
+
+  .header{
+    border-bottom: 1px solid rgb(146,198,177);
+    background-color: white; 
+    justify-content: center; 
+    position: relative; 
+    align-items: center; 
+    display: flex; 
+    overflow: hidden; 
+    top:0;
+  }
+  .news h1{
+    font-size: 20px;
+  }
+
+
+  .header img{
+    width: 280px; 
+    height: auto; 
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .header .login{
+    float: left;
+    text-decoration: none; 
+    color: rgb(0, 145, 255); 
+    font-size: 30px; 
+    padding-left: 20px; 
+  }
+  
+  .login-container button{
+    text-decoration: none;
+    background-color: green; 
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+  }
+
+  .header button{
+    float: right; 
+    color:rgb(0, 145, 255);
+    background-color: white;
+    border: none; 
+    font-size: 30px;
+    padding-right: 20px;
+  }
+  
+  .header .instr{
+    font-size:10px;
+  }
+  
+  .question:hover{
+    cursor: pointer; 
+  }
+  
+  .instr:hover{
+    cursor: pointer; 
+  }
+  
+  .question-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+  }
+  ul.elements {
+    list-style-type: none;
+    padding: 0;
+  }
+  .question-popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+  }
+
+  
+  .filemaker {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .filemaker:hover {
+    background-color: #45a049;
+  }
+
+  .question-popup2 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .question-popup-content2 {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  .question-popup3 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .question-popup-content3 {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+  }
+  .question-popup-content3 {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  
+  .question-popup-content3 h1 {
+    font-size: 24px;
+    margin-top: 0;
+  }
+  
+  .question-popup-content3 ul.elements {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .question-popup-content3 ul.elements li {
+    margin-bottom: 10px;
+  }
+  
+  .question-popup-content3 button.filemaker {
+    background-color: #4caf50;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+  }
+  
+  .question-popup-content3 button.filemaker:hover {
+    background-color: #45a049;
+  }
+  
+  
+  .noway{
+    background-color:blue;
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border:none;
+    float: right; 
+  }
+  
+  .instr-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .instr-popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  .What {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    height: 700px;
+    background-image: url("https://media.discordapp.net/attachments/715996959655329943/1087181119910322296/output-onlinepngtools_3.png?width=1656&height=1090");
+    background-size: cover;
+    background-position: center;
+  }
+  
+  
+  
+  .Working{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 700px;
+    width: auto;
+    background-image: url("https://media.discordapp.net/attachments/715996959655329943/1087181120971481138/output-onlinepngtools_1.png?width=1018&height=678");
+    background-size: cover;
+    background-position: center;
+    
+  }
+  
+  .Amount {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    height: 700px;
+    width: auto;
+    background-image: url("https://media.discordapp.net/attachments/715996959655329943/1087181121374130186/output-onlinepngtools.png?width=1656&height=932");
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+  }
+  
+  .sectionZero {
+    display: flex;
+    margin-top: 70px;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 100%;
+  }
+  
+  .section,
+  .sectionTwo,
+  .sectionThree {
+    margin-top: -170px;
+    flex-basis: calc(33.33% - 20px);
+  }
+
+
+  .Amount h2{
+    font-size: 30px; 
+  }
+  .Amount h3{
+    font-size: 25px;
+    color:rgb(53, 50, 50); 
+  }
+  
+  .section,
+  .sectionTwo,
+  .sectionThree {
+    flex: 1 1 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+
+
+
+  
+  .Patnerships{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 700px;
+    width: auto;
+    background-image: url("https://media.discordapp.net/attachments/715996959655329943/1087181120413630556/output-onlinepngtools_2.png?width=1656&height=1048");
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .Patnerships img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    height: 200px;
+  }
+  
+  .Working img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    height: 100px;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: white;
+  }
+  
+  .login-container {
+    width: 400px;
+    margin: 100px auto;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  label {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  input[type="text"],
+  input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  
+  /* Style for sponsor links */
+a {
+  text-decoration: none; /* remove underline */
+  color: blue; /* set link color */
+  font-weight: bold; /* make link bold */
+}
+
+a:hover {
+  color: red; /* change link color on hover */
+}
+
+/* Style for sponsor info */
+p {
+  margin: 0; /* remove default margin */
+  font-size: 16px; /* set font size */
+  color: grey; /* set text color */
+}
+
+/* Style for sponsors list container */
+#listSponsors {
+  font-size: 20px; /* set font size */
+  margin-top: 20px; /* add some space above the container */
+}
+
+  input[type="submit"]:hover {
+    background-color: rgb(146,198,177);
+  }
+
+  
+  
+  .exit a{
+    text-decoration: none;
+    background-color:green;
+    color: white; 
+    font-size: 30px;
+    margin-left: 30px;
+  }
+  
+  .login-container a{
+    text-decoration: none;
+    background-color: grey; 
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    margin-top: 30px;
+  }
+
+  .bold{
+    font-weight: bold; 
+  }
+
+  .headerss{
+    font-size: 10px;
+    font-style: italic;
+  }
+  .Error{
+    background-color: #ffe6e6; /* light red */
+    border: 1px solid #ff4d4d; /* dark red */
+    color: #ff4d4d; /* dark red */
+    padding: 10px;
+    margin: 10px ;
+    border-radius: 5px;
+    font-weight: bold;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .questionSeven .stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+
+
+  #listSponsors {
+    font-size: 40px; /* Change the font size to 40 pixels */
+    color: red; /* Change the text color to red */
+  }
+
+  .question-popup{
+    display: none; 
+  }
+
+  .question-popup2{
+    display: none; 
+  } 
+  .instr-popup{
+    display: none; 
+  }
+
+  /* CSS styles for the gethelp container */
+  .gethelp {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+      /* CSS styles for the button */
+  .gethelp button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    }
+
+    .gethelp button:hover {
+      background-color: #45a049;
+    }

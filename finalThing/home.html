@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head> 
+        <title>Luminous Sponsorship Portal</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet">
+        <meta name = "viewport" content = "width=device-width, initial-scale = 0, user-scalable=no"> 
+        <script src = "mov.js" ></script>
+        <script src = "https://unkpg.com/read-excel-file@4.x/bundle/read-excel-file.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <div class = "header">
+            <!-- <a href = "/login" class = "login" id = "okokok">Login</a> -->
+            <a href = "index.html" class = "login" id = "okokok">START</a>
+            
+            <img src = "https://media.discordapp.net/attachments/715996959655329943/1114837954926497872/Screen_Shot_2023-06-04_at_2.41.30_AM.png?width=772&height=612" alt = "logo" style = "height: 10%; width: 10%">
+            <button type="button" class="question" onclick="togglePopup()">&#63;</button>
+            <button type = "button" class = "instr" onclick="togglePopupTwo()">Instructions</button>
+        </div>
+
+        <div class="question-popup" id="questionPopup">
+            <div class="question-popup-content">
+                <button type="button" onclick="togglePopup()" class = "noway">X</button>
+                <h1>Do you have any questions or comments?</h1>
+                <p>Email us at <a href="mailto:douglas.stewart@luminousenergy.solutions ">douglas.stewart@luminousenergy.solutions </a></p>
+
+            </div>
+        </div>
+
+        <div class = "instr-popup" id = instrPopUp>
+            <div class = "instr-popup-content">
+                <button type = "button" onclick = "togglePopupTwo()" class = "noway">X</button>
+                <h1>Instructions</h1>
+                <h2>Just press start and follow the instructions</h2>
+            </div>
+        </div>
+        
+        <div class = "PageSlides">
+            <div class = "What">
+                <h1>What is the Luminous Energy Solutions Sponsorship Portal?</h1>
+                <h2>This is a platform that allows customers of Luminous Energy Solutions to identify and apply for potential funding for their energy reduction programs</h2>
+            </div>
+
+            <div class = "Amount">
+                <div class = "sectionZero">
+                    <h1>Why?</h1>
+                </div>
+
+                <div class = "section">
+                    <h2>You can save up to.....</h2>
+                    <h3 id = "heyasa"></h3>
+                    <h2>Candian Dollars</h2>
+                </div>
+
+                <div class = "sectionTwo">
+                    <h2>You can reduce up to......</h2>
+                    <h3 id = "percentage">0%</h3>
+                    <h2>of wasted energy</h2>
+                </div>
+
+                <div class = "sectionThree">
+                    <h2>Connect with over</h2>
+                    <h3 id="programCount">0 programs</h3>
+                </div>
+
+            </div>
+
+            <div class = "Working">
+                <h1>How does it work?</h1>
+                <h2>It parses through a database that contains sponsorship programs that are all over Canada and matches them to the customers company and matches to the customer profile</h2>
+                <h2>The user will then have a list of programs that offer grants and subsides and different ways to apply alongside all the required information.</h2>
+            </div>
+
+            <div class = "Patnerships">
+                <h1>Customers</h1>
+                <h2>We work for over 10+ companies in Canada, USA, Bosnia, KSA, and the UAE and we are excited to serve more</h2>
+                <h2>If you are interested in knowing more please visit our webiste or email us at Douglas.stewart@luminousenergy.solutions</h2>
+                <a id = "cla" href = "https://luminousenergy.solutions/">Website</a>
+                <div class = "theImages">
+                    <img id = "big" src = "https://media.discordapp.net/attachments/715996959655329943/1114254290563891300/cropped-logo-4.png?width=420&height=186">
+                    <img src = "https://media.discordapp.net/attachments/715996959655329943/1114254291461472396/logo.png?width=596&height=194"> 
+                    <!-- <img src = "https://media.discordapp.net/attachments/715996959655329943/1114254291868323880/horizonacademy3.png?width=1410&height=1056">
+                    <img src = "https://media.discordapp.net/attachments/715996959655329943/1114254290819748002/qtq_95.webp?width=638&height=408"> -->
+                    <img src = "https://media.discordapp.net/attachments/715996959655329943/1114254292203880540/1666604495973.jpg?width=400&height=400"> 
+                </div>
+            </div>
+        </div>
+
+
+    </body>
+
+</html>
+<script>
+
+
+    function togglePopup() {
+        var popup = document.getElementById("questionPopup");
+        popup.style.display = popup.style.display === "none" ? "flex" : "none";
+    }
+    
+    function hidePopup() {
+        var popup = document.getElementById("questionPopup");
+        popup.style.display = "none";
+    }
+    
+    window.onclick = function(event) {
+        var popup = document.getElementById("questionPopup");
+        if (event.target == popup) {
+            hidePopup();
+        }
+    }
+    
+    
+    function togglePopupTwo() {
+        var popup = document.getElementById("instrPopUp");
+        popup.style.display = popup.style.display === "none" ? "flex" : "none";
+    }
+    
+    
+    function hidePopupTwo() {
+        var popup = document.getElementById("instrPopUp");
+        popup.style.display = "none";
+    }
+    
+    window.onclick = function(event) {
+        var popup = document.getElementById("instrPopUp");
+        if (event.target == popup) {
+            hidePopupTwo();
+        }
+    }
+
+    const percentageElement = document.getElementById('percentage');
+    let percentage = 0;
+    
+    function animatePercentage() {
+      const animation = setInterval(() => {
+        percentage++;
+        percentageElement.textContent = `${percentage}%`;
+    
+        if (percentage === 30) {
+          clearInterval(animation);
+        }
+      }, 200);
+    }
+    
+    animatePercentage();
+    
+    const heyasaElement = document.getElementById('heyasa');
+    const text = "400,000";
+    let index = 0;
+    
+    function typeText() {
+      heyasaElement.textContent += text[index];
+      index++;
+    
+      if (index < text.length) {
+        setTimeout(typeText, 900);
+      }
+    }
+    
+    typeText();
+
+    const programCountElement = document.getElementById('programCount');
+    const targetCount = 10;
+    let currentCount = 0;
+    
+    function countUp() {
+      const countingInterval = setInterval(() => {
+        currentCount++;
+        programCountElement.textContent = `${currentCount} programs`;
+    
+        if (currentCount === targetCount) {
+          clearInterval(countingInterval);
+        }
+      }, 300);
+    }
+    
+    countUp();
+</script>
